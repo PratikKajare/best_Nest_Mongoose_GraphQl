@@ -1,0 +1,53 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type assignees {
+  assignType: String
+  selectedUsers: [String!]
+}
+
+type attachements {
+  name: String
+  filePath: String
+  type: String
+  size: String
+}
+
+type organization {
+  organizations: String
+  id: ID
+}
+
+type author {
+  name: String
+  id: ID
+  organization: [organization!]
+}
+
+type lastUpdatedInfo {
+  updatedAt: String
+}
+
+type MulType {
+  _id: ID
+  title: String
+  dueDate: String
+  instructions: String
+  attachements: [attachements!]
+  shouldEmailAssignees: Boolean
+  managerId: String
+  status: String
+  learningItemCollections: [String!]
+  assignType: String
+  assignees: [assignees!]
+  author: [author!]
+  lastUpdatedInfo: [lastUpdatedInfo!]
+  createdAt: String
+}
+
+type Query {
+  hello: String!
+  Assignments: [MulType!]!
+  AssignmentbyId(_id: String!): MulType!
+}
